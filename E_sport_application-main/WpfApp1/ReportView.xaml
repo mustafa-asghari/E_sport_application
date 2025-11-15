@@ -1,0 +1,81 @@
+<UserControl x:Class="E_sport_application.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:E_sport_application"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <!-- This is a new view to meet your reporting requirements -->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Controls -->
+        <Border Grid.Row="0" Background="White" Padding="10" Margin="5" CornerRadius="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Report Type:" Grid.Column="0" VerticalAlignment="Center" Margin="0"/>
+                <ComboBox x:Name="cmbReportType" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,20,0" SelectionChanged="CmbReportType_SelectionChanged">
+                    <ComboBoxItem Content="Team Details (by Points)"/>
+                    <ComboBoxItem Content="Team Results (by Event)"/>
+                    <ComboBoxItem Content="Team Results (by Team)"/>
+                </ComboBox>
+
+                <Label Content="Filter by Team Name:" Grid.Column="2" VerticalAlignment="Center" Margin="20,0,5,0"/>
+                <TextBox x:Name="txtSearch" Grid.Column="3" Width="200" VerticalAlignment="Center" KeyUp="TxtSearch_KeyUp"/>
+            </Grid>
+        </Border>
+
+        <!-- Report area with edit panel on right -->
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left: Report Grid -->
+            <DataGrid x:Name="dgReport"
+                      Grid.Column="0"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False"
+                      SelectionChanged="DgReport_SelectionChanged"/>
+
+            <!-- Right: Edit panel (visible only for Team Results reports) -->
+            <Border Grid.Column="1" Background="White" Padding="12" CornerRadius="6" BorderBrush="LightGray" BorderThickness="1" Margin="10,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="Edit Selected Result" FontWeight="Bold" FontSize="16"/>
+                    <TextBlock x:Name="lblSelectedSummary" Margin="0,6,0,12" TextWrapping="Wrap"/>
+
+                    <Label Content="New Result"/>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton x:Name="rbEditTeam1Win" Content="Team 1 Wins" GroupName="EditResult" Margin="4"/>
+                        <RadioButton x:Name="rbEditDraw" Content="Draw" GroupName="EditResult" Margin="4"/>
+                        <RadioButton x:Name="rbEditTeam2Win" Content="Team 2 Wins" GroupName="EditResult" Margin="4"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+                        <Button x:Name="btnUpdateSelected" Content="Update Selected" Click="BtnUpdateSelected_Click" Width="130" Margin="4"/>
+                        <Button x:Name="btnDeleteSelected" Content="Delete Selected" Click="BtnDeleteSelected_Click" Width="130" Margin="4" Background="#FFD32F2F"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Buttons at the bottom overlay -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="btnRunReport" Content="Run Report" Click="BtnRunReport_Click" Width="120" Background="#FF03A9F4"/>
+            <Button x:Name="btnExport" Content="Export to CSV" Click="BtnExport_Click" Width="120" Background="#FF4CAF50" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

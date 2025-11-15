@@ -1,0 +1,43 @@
+﻿<Window x:Class="E_sport_application.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_sport_application"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Kidd Esports Tracker" Height="720" Width="1080">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Column 0 for Navigation -->
+            <ColumnDefinition Width="200"/>
+            <!-- Column 1 for Content -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation Panel (from your file) -->
+        <Border Grid.Column="0" Background="#FF2D3C7A" BorderBrush="Blue" BorderThickness="2">
+            <StackPanel Margin="10">
+                <TextBlock Text="Kidd Esports" Foreground="White" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,30"/>
+
+                <!-- Buttons from your file, correctly wired up -->
+                <Button x:Name="btnUsers" Margin="0,10" FontSize="20" Click="btnUsers_Click" Content="Teams"/>
+                <Button x:Name="btn_event" Margin="0,10" FontSize="20" Click="btn_Evenets" Content="Events"/>
+                <Button x:Name="Games" Margin="0,10" FontSize="20" Click="Btn_games" Content="Games"/>
+
+                <!-- "Result" button repurposed for "Enter Result" -->
+                <Button x:Name="Result" Margin="0,10" FontSize="20" Click="Btn_result" Content="Enter Result" FontWeight="Bold" Background="#FF8BC34A"/>
+
+                <!-- New button for Reports requirement -->
+                <Button x:Name="btnReports" Margin="0,30,0,10" FontSize="20" Click="Btn_reports_Click" Content="Reports"/>
+            </StackPanel>
+        </Border>
+
+        <!-- ContentControl (from your file), correctly placed in Column 1 -->
+        <ContentControl x:Name="conMain" Grid.Column="1" Margin="10"/>
+
+        <!-- I have removed the extra DataGrid and StackPanel from your barebone XAML -->
+        <!-- as they were conflicting with the ContentControl navigation. -->
+
+    </Grid>
+</Window>

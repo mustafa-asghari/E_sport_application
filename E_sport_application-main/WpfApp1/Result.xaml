@@ -1,0 +1,56 @@
+<UserControl x:Class="E_sport_application.Result"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_sport_application"
+        mc:Ignorable="d" 
+        d:DesignHeight="600" d:DesignWidth="800" Loaded="UserControl_Loaded">
+
+    <Border Background="White" Margin="50" Padding="30" CornerRadius="10" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            BorderBrush="LightGray" BorderThickness="1" MaxWidth="500">
+        <StackPanel>
+            <TextBlock Text="Enter Match Result" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <Label Content="Select Event"/>
+            <ComboBox x:Name="cmbEvent" DisplayMemberPath="EventName" SelectedValuePath="EventID"/>
+
+            <Label Content="Select Game"/>
+            <ComboBox x:Name="cmbGame" DisplayMemberPath="GameName" SelectedValuePath="GameID"/>
+
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Label Content="Team 1" HorizontalAlignment="Center"/>
+                    <ComboBox x:Name="cmbTeam1" DisplayMemberPath="TeamName" SelectedValuePath="Team_id" SelectionChanged="CmbTeam1_SelectionChanged"/>
+                </StackPanel>
+
+                <TextBlock Text="VS" Grid.Column="1" FontSize="20" FontWeight="Bold" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,20,10,0"/>
+
+                <StackPanel Grid.Column="2">
+                    <Label Content="Team 2" HorizontalAlignment="Center"/>
+                    <ComboBox x:Name="cmbTeam2" DisplayMemberPath="TeamName" SelectedValuePath="Team_id"/>
+                </StackPanel>
+            </Grid>
+
+            <Label Content="Result" HorizontalAlignment="Center" Margin="0,20,0,5"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <RadioButton x:Name="rbTeam1Wins" Content="Team 1 Wins" GroupName="Result" Margin="10"/>
+                <RadioButton x:Name="rbDraw" Content="Draw" GroupName="Result" Margin="10" IsChecked="True"/>
+                <RadioButton x:Name="rbTeam2Wins" Content="Team 2 Wins" GroupName="Result" Margin="10"/>
+            </StackPanel>
+
+            <Button x:Name="btnSave" Content="Save Result" Click="BtnSave_Click" 
+                    Margin="0,30,0,0" Padding="15,8" FontSize="16" HorizontalAlignment="Center"
+                    Background="#FF009688"/>
+
+        </StackPanel>
+    </Border>
+</UserControl>

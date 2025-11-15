@@ -1,0 +1,12 @@
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\bin\Release\net8.0-windows\DataMangment.deps.json
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\bin\Release\net8.0-windows\DataMangment.dll
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\bin\Release\net8.0-windows\DataMangment.pdb
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.csproj.AssemblyReference.cache
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.AssemblyInfoInputs.cache
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.AssemblyInfo.cs
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.csproj.CoreCompileInputs.cache
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.dll
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\refint\DataMangment.dll
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\DataMangment.pdb
+C:\Mac\Home\Documents\tafe\c sharp\e_sport_team\DataMangment\obj\Release\net8.0-windows\ref\DataMangment.dll

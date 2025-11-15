@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="E_sport_application.Teams_info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_sport_application"
+        mc:Ignorable="d" 
+        d:DesignHeight="600" d:DesignWidth="800" Loaded="UserControl_Loaded">
+
+    <!-- Your barebone file was empty. I have created the required CRUD UI. -->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Data Grid -->
+        <DataGrid x:Name="dgTeams" Grid.Column="0" SelectionChanged="DgTeams_SelectionChanged">
+            <DataGrid.Columns>
+                <!-- Bindings must match the property names in your 'teams_info' class -->
+                <DataGridTextColumn Header="ID" Binding="{Binding Team_id}" Width="50"/>
+                <DataGridTextColumn Header="Team Name" Binding="{Binding TeamName}" Width="*"/>
+                <DataGridTextColumn Header="Contact" Binding="{Binding PrimaryContact}" Width="*"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding ContactPhone}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding ContactEmail}" Width="*"/>
+                <DataGridTextColumn Header="Points" Binding="{Binding CompetitionPoints}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Form -->
+        <Border Grid.Column="1" Background="White" Margin="10,0,0,0" Padding="10" CornerRadius="5">
+            <StackPanel x:Name="spForm">
+                <TextBlock Text="Manage Teams" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <Label Content="Team ID (Read-only)"/>
+                <TextBox x:Name="txtTeamId" IsReadOnly="True" Background="#EEEEEE"/>
+
+                <Label Content="Team Name"/>
+                <TextBox x:Name="txtTeamName"/>
+
+                <Label Content="Primary Contact"/>
+                <TextBox x:Name="txtPrimaryContact"/>
+
+                <Label Content="Contact Phone"/>
+                <TextBox x:Name="txtContactPhone"/>
+
+                <Label Content="Contact Email"/>
+                <TextBox x:Name="txtContactEmail"/>
+
+                <Label Content="Competition Points (Read-only)"/>
+                <TextBox x:Name="txtCompetitionPoints" IsReadOnly="True" Background="#EEEEEE"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button x:Name="btnAddNew" Content="Add New" Click="BtnAddNew_Click" Width="80"/>
+                    <Button x:Name="btnUpdate" Content="Update" Click="BtnUpdate_Click" Width="80" IsEnabled="False"/>
+                    <Button x:Name="btnClear" Content="Clear" Click="BtnClear_Click" Width="80" Background="#FF8A8A8A"/>
+                </StackPanel>
+                <Button x:Name="btnDelete" Content="Delete Selected" Click="BtnDelete_Click" Background="#FFD32F2F" Margin="0,10,0,0" IsEnabled="False"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
